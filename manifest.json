@@ -1,0 +1,41 @@
+{
+  "name": "Aftonbladet Unblocker",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Aftonbladet adblock blocker unblocker.",
+  "homepage_url": "https://github.com/ehellman/aftonbladet-unblocker",
+  "author": "Erik Hellman",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+		{
+			"matches": [
+				"http://www.aftonbladet.se/*",
+				"http://aftonbladet.se/*",
+				"https://www.aftonbladet.se/*",
+				"https://aftonbladet.se/*"
+			],
+			"js": [
+				"inject.js"
+      ],
+      "css": [
+        "inject.css"
+      ],
+			"run_at": "document_start"
+		}
+	],
+  "icons": {
+    "48": "48.png"
+  },
+  "permissions": [
+    "https://aftonbladet.se/*",
+    "https://www.aftonbladet.se/*",
+    "http://aftonbladet.se/*",
+    "http://www.aftonbladet.se/*",
+    "activeTab"
+  ]
+}

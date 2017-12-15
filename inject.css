@@ -1,0 +1,4 @@
+.noblur{
+  -webkit-filter: none !important;
+  filter: none !important; 
+}
